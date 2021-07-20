@@ -138,7 +138,7 @@ def run():
         elif fallos == maximum_attempts:
             print(msglost)
         else:
-            print("x")
+            print("G")
 
 
 
