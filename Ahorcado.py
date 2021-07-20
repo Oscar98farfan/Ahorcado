@@ -1,6 +1,6 @@
 import random, pyfiglet, os
 
-maximum_attempts = 8
+maximum_attempts = 9
 header = pyfiglet.figlet_format("HANGED   : D !!")
 msglost = pyfiglet.figlet_format("YOU LOST : ( ")
 msgwin = pyfiglet.figlet_format("YOU WON : ) ")
@@ -106,7 +106,7 @@ def run():
     print() #Espacico
 
     # original, empty_space = word_secret()
-    fallos = 0
+    fallos = -1
     while empty_space != original and fallos < maximum_attempts:
         # os.system('cls')
         print() #Espacico
