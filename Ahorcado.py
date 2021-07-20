@@ -134,7 +134,7 @@ def run():
             print() # Espacio
             print(f"Bien hecho {jugador} ganaste y evitaste que Tony muriera")
             print() # Espacio
-            print(drawings[9])
+            print(drawings[10])
         elif fallos == maximum_attempts:
             print(msglost)
         else:
