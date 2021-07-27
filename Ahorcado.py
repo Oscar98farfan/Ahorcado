@@ -95,6 +95,7 @@ def succes(original, empty_space, simbolo):   # Simbolo: es la letra que yo colo
 def run():
     original, empty_space, numberWords = word_secret()
     print(header)
+    
     jugador = input("Dime tu nombre: ")
     print(f"Bienvenido {jugador}")
     print(f"Hoy jugaremos el Ahorcado, tu palabra secreta esta entre {len(words)} palabras")
