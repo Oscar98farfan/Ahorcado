@@ -1,6 +1,6 @@
-import random, pyfiglet, os
+import random, os, pyfiglet
 
-maximum_attempts = 9
+maximum_attempts = 8
 header = pyfiglet.figlet_format("HANGED   : D !!")
 msglost = pyfiglet.figlet_format("YOU LOST : ( ")
 msgwin = pyfiglet.figlet_format("YOU WON : ) ")
@@ -121,7 +121,8 @@ def run():
         # elif fallos == 7:
             # print(f"{jugador} te queda solo una oportunidad para fallar. Si no aciertas Tony Morira")
         else:
-            print(f"Lo siento esa letra {s} no esta en la palabra")
+            print(f"Lo siento la letra {s} no esta en la palabra secreta")
+            print(f"Sigue intentanto {jugador}")
             print() #Espacico
             fallos += 1
             print(f"Este es tu fallo numero {fallos}, te quedan {(maximum_attempts - fallos)}")
@@ -137,13 +138,11 @@ def run():
             print(drawings[9])
         elif fallos == maximum_attempts:
             print(msglost)
+            print()
+            print(f"{jugador} quieres volver a jugar")
+            print()
         else:
-            print("G")
-
-
-
-
-            
+            print()
 
 
 
