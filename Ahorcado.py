@@ -1,4 +1,6 @@
-import random, os, pyfiglet
+import random, os
+import pyfiglet
+
 
 maximum_attempts = 8
 header = pyfiglet.figlet_format("HANGED   : D !!")
@@ -83,17 +85,17 @@ def word_secret():
     empty_space = "_" * len(secret)
     return secret, empty_space, numberWords
 
-def succes(original, empty_space, simbolo):   # Simbolo: es la letra que yo coloco, original: Palabra secreta, empty_space: guiones 
-    cant = original.count(simbolo)
+def succes(secreto, empty_space, letra):   # Simbolo: es la letra que yo coloco, original: Palabra secreta, empty_space: guiones 
+    cant = secreto.count(letra)
     begin = 0
     for i in range(cant):
-        pos = original.find(simbolo, begin)
-        empty_space = empty_space[:pos] + simbolo + empty_space[pos+1:]
+        pos = secreto.find(letra, begin)
+        empty_space = empty_space[:pos] + letra + empty_space[pos+1:]
         begin = pos + 1
     return empty_space
 
 def run():
-    original, empty_space, numberWords = word_secret()
+    secreto, empty_space, numberWords = word_secret()
     print(header)
     
     jugador = input("Dime tu nombre: ")
@@ -107,18 +109,18 @@ def run():
     print() #Espacico
 
     # original, empty_space = word_secret()
-    fallos = -1
-    while empty_space != original and fallos < maximum_attempts:
+    fallos = 0
+    while empty_space != secreto and fallos < maximum_attempts:
         # os.system('cls')
         print() #Espacico
         print(f"Palabra secreta es: {empty_space}")
         print() #Espacico
-        print(original) # Esta es para revisar la orginal
+        #print(original) # Esta es para revisar la orginal
         s = input("Cual letra quieres intentar?: ")
         print() #Espacico
-        if s in original:
-            empty_space = succes(original, empty_space, s)
-            print(f"Bien Hecho {jugador}, la letra {s} esta {original.count(s)} veces. Sigue asi")
+        if s in secreto:
+            empty_space = succes(secreto, empty_space, s)
+            print(f"Bien Hecho {jugador}, la letra {s} esta {secreto.count(s)} veces. Sigue asi")
         # elif fallos == 7:
             # print(f"{jugador} te queda solo una oportunidad para fallar. Si no aciertas Tony Morira")
         else:
@@ -130,7 +132,7 @@ def run():
             print() #Espacico
             print(drawings[fallos])
         
-        if empty_space == original and fallos < maximum_attempts:
+        if empty_space == secreto and fallos < maximum_attempts:
             print() # Espacio
             print(msgwin)
             print() # Espacio
